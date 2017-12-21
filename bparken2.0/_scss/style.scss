@@ -1,0 +1,198 @@
+@import "_Mixin.scss";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+/* @import "_social.scss"; */
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Basic Style */
+body{
+    font-family: 'Montserrat', sans-serif;
+  /*  background-color: red;*/
+
+    }
+
+#burger{
+       display:none;
+     }
+
+#burgermenu{
+  @include icons(transparent); //mixin fra undervisningen
+  float:right;
+  color:Black;
+}
+input {
+  display: none;
+}
+#burger:checked + nav {
+  left:0;
+}
+
+nav{
+  width:300px;
+  height:100%;
+  position:fixed;
+  left:-305px;
+  top:0;
+  background-color:#e0e0e0;
+  /*box-shadow:3px 0px 5px rgba(0,0,0,0.25);*/
+  transition-duration:.3s;
+  z-index:1;
+  ul
+  {
+      list-style-type: none;
+    li{
+    a{
+      display: block;
+      color: Black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      float: none;
+      height:50px;
+      color:#212121;
+      border-bottom:1px solid #757575;
+      &:hover{
+        background-color:#c1c1c1;
+     }
+   }
+ }
+}
+}/* END nav*/
+
+.logo{
+      position: absolute;
+        top: 20px;
+        left: 140px;
+        height: 100px;
+        width: 100px;
+        }
+
+
+.linje{
+  border-top: solid 3px black;
+  border-bottom: solid 3px black;
+  margin-top: 50px;
+}
+/*header SLUT*/
+
+main{
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 20px;
+        background-color: red;
+          }
+
+p{
+        text-align: left;
+        line-height: 25px;
+      }
+
+
+img{
+  width: 300px;
+}
+/*Main SLUT*/
+
+/*Footer START*/
+footer{
+  display: block;
+  color: Black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-top: solid 3px black;
+  margin-left:10px;
+  background-color: orange;
+}
+
+  h3{
+    font-size: 18px;
+    float: left
+  }
+
+  i.fa{
+  float: right;
+  margin-left: 15px;
+  margin-top: 25px;
+
+    }
+    i.fa-facebook{
+  @include social(#3b5998);
+    }
+    i.fa-instagram{
+  @include social(#bc2a8d);
+        }
+/*Footer SLUT*/
+
+/*DESK*/
+@media  screen and (min-width: 730px) {
+  #burgermenu{
+     display:none;
+   }
+   /*header{
+  div{
+    input, label{
+      display:none;
+    }
+  }
+}*/
+header {
+  nav{
+      position: static;
+      width: auto;
+      /* overflow: hidden; */
+      border-top: solid 3px black;
+      /*border-bottom: solid 3px black;*/
+      float: right;
+        ul{
+          li {
+            display: inline;
+            a {
+              display: inline-block;
+              border-bottom: 0;
+              &:hover:not(.active) {
+                /* background-color: #111; */
+
+              }
+
+            } /* END a */
+            .active {
+              background-color: #4CAF50;
+            }
+    } /* END li */
+  } /* END ul */
+} /* END nav */
+
+.logo{
+position: absolute;
+  top: 10px;
+  left: 85px;
+  height: 130px;
+  width: 130px;
+}
+}
+  /* lcj */
+  main {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    text-align: justify;
+    display: block;
+    margin-left: 120px;
+    margin-right: 120px;
+    background-color: skyblue;
+  }
+
+
+
+  img{
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+
+}
+ /* min-width 730px */
